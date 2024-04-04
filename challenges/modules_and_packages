@@ -1,0 +1,4 @@
+Module is basically another file that contains functions(modules: def) in it.
+
+Packages is a folder with file(s) that contain function(s).
+There must be a file within the folder called '__init__.py' so it gets recognized as a package
