@@ -21,7 +21,7 @@ class Book:
 b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
 b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
 
-# TODO: call the object as if it were a function
+# TODO: call the object as if it were a function (without using the regular 'b1.price etc..'
 print(b1)
 b1('Anna Karenina', 'Leo Tolstoy', 49.95)
 print(b1)
