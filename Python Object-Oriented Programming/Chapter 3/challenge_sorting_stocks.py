@@ -1,4 +1,3 @@
-# Python Object Oriented Programming by Joe Marini course example
 # Programming challenge: add methods for comparison and equality
 
 # Challenge: use a magic method to make stocks and bonds sortable
@@ -16,12 +15,22 @@ class Asset(ABC):
     def __str__(self):
         pass
 
-
 class Stock(Asset):
     def __init__(self, ticker, price, company):
         super().__init__(price)
         self.company = company
         self.ticker = ticker
+
+    # TODO: use the __str__ magic method for Stock
+    def __str__(self):
+        return f'{self.ticker}: {self.company} -- ${self.price}'
+
+    # TODO: use the __lt__ magic to enable object comparison and sorting of Stock price
+    def __lt__(self, value):
+        if not isinstance(value, Stock):
+            raise ValueError('The object passed is not a "Stock"')
+        return self.price < value.price
+
 
 
 class Bond(Asset):
@@ -30,6 +39,16 @@ class Bond(Asset):
         self.description = description
         self.duration = duration
         self.yieldamt = yieldamt
+
+    # TODO: use the __str__ magic method for Bond
+    def __str__(self):
+        return f'{self.description}: {self.duration}yr : ${self.price} : {self.yieldamt}%'
+
+    # TODO: use the __lt__ magic to enable object comparison and sorting of Bond yieldamt
+    def __lt__(self, value):
+        if not isinstance(value, Bond):
+            raise ValueError('The object passed is not a "Bond"')
+        return self.yieldamt < value.yieldamt
 
 
 # ~~~~~~~~~ TEST CODE ~~~~~~~~~
