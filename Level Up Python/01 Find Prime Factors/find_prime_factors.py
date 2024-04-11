@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-
 # Def Prime Numbers: Numbers that are only divided by itself and 1
 # Def Factors: All Numbers
 
