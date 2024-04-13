@@ -15,10 +15,8 @@ def is_palindrome(my_string):
 
     # Check if the string is a palindrome
     # The string slicing '[::-1]' reverses my original string
-    # If the original string = revere string, return True, else False
-    if my_string == my_string[::-1]:
-        return True
-    return False
+    # If the original string = revere string, it returns True, else False
+    return my_string == my_string[::-1]
 
 
 # TEST CODE
