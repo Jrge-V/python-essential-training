@@ -1,12 +1,20 @@
-
-def index_all(my_lst, item):
+# initiate function taking in the multidimensional list and item to look for
+def index_all(my_list, item):
+    # initiate an empty list where we will be appending the indices of found items
     indices = []
 
-    for i in range(len(my_lst)):
-        if my_lst[i] == item:
+    # for loop that takes the range of the length of my_list
+    for i in range(len(my_list)):
+        # if the item at indices i equals the item we are looking for:
+        if my_list[i] == item:
+            # append that indices (NOT THE ITEM ITSELF) to the indices list
             indices.append([i])
-        elif isinstance(my_lst[i], list):
-            for index in index_all(my_lst[i], item):
+        # otherwise check if the indices is a list object
+        elif isinstance(my_list[i], list):
+            # if it is then loop through the index and recursively call the function
+            # but with the new inner lists and item we are looking for
+            for index in index_all(my_list[i], item):
+                # append the indices and index
                 indices.append([i] + index)
 
     return indices
