@@ -17,6 +17,7 @@ def index_all(my_list, item):
                 # append the indices and index
                 indices.append([i] + index)
 
+    # return the list of indices where the items are found
     return indices
 
 
