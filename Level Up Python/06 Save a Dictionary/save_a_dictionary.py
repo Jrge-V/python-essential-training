@@ -2,8 +2,10 @@
 def save_dict(my_dict, output_file):
 
     with open(output_file, 'w') as file:
-        for key, value in my_dict:
-            file.write(f'{key}: {value}')
+        file.write('{')
+        for key, value in my_dict.items():
+            file.write(f'{key}: \'{value}\', ')
+        file.write('}')
 
 
 # Load dictionary function upon execution
