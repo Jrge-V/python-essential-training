@@ -40,7 +40,7 @@ parser.add_argument('--file1', dest='csv_input1', help='pass in first csv file')
 parser.add_argument('--file2', dest='csv_input2', help='pass in second csv file')
 args = parser.parse_args()
 
-# if both files weren't passed throw an error and exit
+# if both files were not passed throw an error and exit
 if args.csv_input1 and args.csv_input2 is None:
     print('select 2 csv files')
     sys.exit()
