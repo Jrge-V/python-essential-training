@@ -4,27 +4,32 @@ import sys
 
 
 def merge_csv(csv_file1, csv_file2, output_file):
+    # create a dictionary
     merged_data = {}
 
+    # open first file to read
     with open(csv_file1, 'r') as file:
+        # utilizing the DictReader method it reads the keys and field names taken from the header and rows
         reader = csv.DictReader(file)
+        # create a key using their name and pass in the headers followed by rows
         for row in reader:
             merged_data[row['Name']] = row
 
-    # print(merged_data)
-
+    # open second file to read and append it into merged_data
     with open(csv_file2, 'r') as file:
         reader = csv.DictReader(file)
         for row in reader:
             merged_data[row['Name']] = row
 
-    # print(merged_data)
-
+    # open the csv file to output in write mode
     with open(output_file, 'w', newline='') as csvfile:
+        # add header 'fieldnames'
         fieldnames = ['Name', 'Midterm', 'Lab', 'Final']
+        # the DictWriter method automatically gives rows a ',' if row is empty
         thewriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
         thewriter.writeheader()
 
+        # write each header and row in the csv output file
         for row in merged_data.values():
             thewriter.writerow(row)
 
